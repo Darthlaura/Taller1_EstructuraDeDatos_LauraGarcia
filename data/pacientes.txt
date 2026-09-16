@@ -1,0 +1,8 @@
+001;Juan Perez;25;Cardiologia
+002;Maria Soto;65;Urgencias
+003;Pedro Rojas;43;Cirugia
+004;Ana Lopez;8;Pediatria
+005;Carlos Diaz;51;Neurologia
+006;Paciente Edad Mala;abc;Urgencias
+007;Paciente Servicio Malo;30;Dermatologia
+008;;25;Urgencias

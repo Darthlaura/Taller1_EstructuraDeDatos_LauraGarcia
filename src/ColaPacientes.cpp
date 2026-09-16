@@ -93,6 +93,22 @@ void ColaPacientes::mostrarPaciente()
     }
 }
 
+bool ColaPacientes::buscarPaciente(std::string id)
+{
+    Nodo *actual = this->frente;
+
+    while (actual != nullptr)
+    {
+        if (actual->paciente.getId() == id)
+        {
+            return true;
+        }
+
+        actual = actual->siguiente;
+    }
+
+    return false;
+}
 
 // Destructor de la cola
 ColaPacientes::~ColaPacientes()

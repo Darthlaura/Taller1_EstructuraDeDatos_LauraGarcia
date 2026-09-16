@@ -60,7 +60,8 @@ public:
     // Muestra los pacientes que están esperando
     void mostrarPaciente();
 
-
+    // Buscar un paciente por su ID
+    bool buscarPaciente(std::string id);
     // Destructor de la clase ColaPacientes
     // Servirá para liberar los nodos de la memoria
     ~ColaPacientes();
