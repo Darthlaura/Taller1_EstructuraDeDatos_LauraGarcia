@@ -1,4 +1,4 @@
-#include "../include/ColaPaciente.h"
+#include "../include/ColaPacientes.h"
 #include <iostream>
 
 
