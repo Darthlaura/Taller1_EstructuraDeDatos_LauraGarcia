@@ -59,10 +59,12 @@ bool ListaPaciente::estaVacia(){
 }
 
 
-void ListaPaciente::mostrarPaciente(){
+void ListaPaciente::mostrarPaciente()
+{
 
    Nodo* actual = this->inicio;
-   while(actual != nullptr){
+   while(actual != nullptr)
+   {
 
        std::cout << "ID:  " <<actual->paciente.getId() << std::endl;
        std::cout << "Nombre: " <<actual->paciente.getNombre() << std::endl;
@@ -71,17 +73,18 @@ void ListaPaciente::mostrarPaciente(){
        actual = actual->siguiente; 
 
 
-
+   }
    }
 
 
-ListaPaciente::~ListaPaciente(){
+ListaPaciente::~ListaPaciente()
+{
     while (this->inicio != nullptr) 
      {
        Nodo* auxiliar = this->inicio;
        this->inicio = this->inicio->siguiente;
          delete auxiliar;
-          
+
 
 
      }  
@@ -92,4 +95,3 @@ ListaPaciente::~ListaPaciente(){
   
 
 
-}
