@@ -353,7 +353,73 @@ bool Hospital::pacienteExiste(std::string id)
 
     return false;
 }
+
+void Hospital::buscarPacientePorId(std::string id)
+{
+    std::cout << "\n===== BUSQUEDA DE PACIENTE ====="
+              << std::endl;
+
+    // Primero buscar entre los pacientes que siguen esperando
+    if (this->colaPacientes.mostrarPacientePorId(id))
+    {
+        std::cout << "Estado: En espera"
+                  << std::endl;
+
+        return;
+    }
+
+    // Si no esta en la cola, buscar en los servicios
+    NodoServicio *actual = this->primerServicio;
+
+    while (actual != nullptr)
+    {
+        if (actual->servicio.buscarPaciente(id))
+        {
+            actual->servicio.mostrarPacientePorId(id);
+
+            std::cout << "Estado: Atendido"
+                      << std::endl;
+
+            return;
+        }
+
+        actual = actual->siguiente;
+    }
+
+    std::cout << "Paciente no encontrado"
+              << std::endl;
+}
 // Destructor del hospital
+
+void Hospital::mostrarEstadoServicios()
+{
+    std::cout << "\n===== ESTADO GENERAL DE SERVICIOS ====="
+              << std::endl;
+
+    NodoServicio *actual = this->primerServicio;
+
+    while (actual != nullptr)
+    {
+        std::cout << "\n-----------------------------"
+                  << std::endl;
+
+        std::cout << "Servicio: "
+                  << actual->servicio.getNombre()
+                  << std::endl;
+
+        if (actual->servicio.estaVacio())
+        {
+            std::cout << "Sin pacientes"
+                      << std::endl;
+        }
+        else
+        {
+            actual->servicio.mostrarPacientes();
+        }
+
+        actual = actual->siguiente;
+    }
+}
 Hospital::~Hospital()
 {
     // Eliminar todos los nodos de servicios

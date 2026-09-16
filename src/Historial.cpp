@@ -32,7 +32,7 @@ void Historial::mostrarHistorial(){
     while(actual != nullptr){
          std::cout << "Nombre: " <<actual->paciente.getNombre() << std::endl;
          std::cout << "Edad: " <<actual->paciente.getEdad() << std::endl;
-         std::cout << "Servicio:" <<actual->paciente.getServicio() << std::endl;
+         std::cout << "Servicio: " <<actual->paciente.getServicio() << std::endl;
          std::cout << "-------------------------------" << std::endl;
          actual = actual->siguiente; 
 

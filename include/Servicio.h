@@ -4,41 +4,34 @@
 #include "Paciente.h"
 #include "ListaPaciente.h"
 
-class Servicio 
-{ 
-  private: 
+class Servicio
+{
+private:
+  std::string nombre;
+  ListaPaciente pacientes;
 
-  std::string nombre; 
-  ListaPaciente pacientes; 
+public:
+  // constructor vacio
+  Servicio();
 
-    public:
+  // constructor con nombre
+  Servicio(std::string nombre);
 
-    //constructor vacio
-    Servicio(); 
+  // obtener el nombre del servicio
+  std::string getNombre();
+  // obtener la lista de pacientes
+  void agregarPaciente(Paciente paciente);
+  // buscar un paciente por su id
+  bool buscarPaciente(std::string id);
+  // Mostrar los pacientes del servicio
+  void mostrarPacientes();
+  // Mostrar paciente por ID
+  bool mostrarPacientePorId(std::string id);
 
-    // constructor con nombre
-    Servicio(std::string nombre);
-    
-    // obtener el nombre del servicio
-    std::string getNombre(); 
-    // obtener la lista de pacientes
-    void agregarPaciente(Paciente paciente);
-    // buscar un paciente por su id
-    bool buscarPaciente(std::string id); 
-    // Mostrar los pacientes del servicio
-    void mostrarPacientes(); 
+  // Revisar si el servicio no tiene pacientes
+  bool estaVacio();
 
-    ~Servicio();
-
-    
-
-
+  ~Servicio();
 };
 
-
-
-
-#endif 
-
-
-
+#endif

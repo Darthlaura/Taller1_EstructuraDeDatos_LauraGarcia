@@ -33,7 +33,8 @@ public:
     bool estaVacia();
     // Mostrar los pacientes que están esperando
     void mostrarPaciente();
-
+    // Mostrar un paciente buscando por su ID
+    bool mostrarPacientePorId(std::string id);
     // Destructor de la lista
     ~ListaPaciente();
 };

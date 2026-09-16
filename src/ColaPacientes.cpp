@@ -1,7 +1,6 @@
 #include "../include/ColaPacientes.h"
 #include <iostream>
 
-
 // Constructor de la cola
 ColaPacientes::ColaPacientes()
 {
@@ -10,12 +9,11 @@ ColaPacientes::ColaPacientes()
     this->final = nullptr;
 }
 
-
 // Agregra un paciente al final de la cola
 void ColaPacientes::agregarPaciente(Paciente paciente)
 {
     // Crear un nuevo nodo y almacenar al paciente dentro
-    Nodo* nuevo = new Nodo(paciente);
+    Nodo *nuevo = new Nodo(paciente);
 
     // Si la cola está vacía
     if (this->frente == nullptr)
@@ -34,9 +32,8 @@ void ColaPacientes::agregarPaciente(Paciente paciente)
     }
 }
 
-
 // Retira al paciente que está al frente de la cola
-bool ColaPacientes::retirarPaciente(Paciente& paciente)
+bool ColaPacientes::retirarPaciente(Paciente &paciente)
 {
     // Si la cola está vacía no puedo retirar nada
     if (this->frente == nullptr)
@@ -45,7 +42,7 @@ bool ColaPacientes::retirarPaciente(Paciente& paciente)
     }
 
     // Guardar temporalmente la dirección del primer nodo
-    Nodo* auxiliar = this->frente;
+    Nodo *auxiliar = this->frente;
 
     // Copiar el paciente que voy a retirar
     paciente = auxiliar->paciente;
@@ -65,19 +62,17 @@ bool ColaPacientes::retirarPaciente(Paciente& paciente)
     return true;
 }
 
-
 // Revisa si la cola está vacía
 bool ColaPacientes::estaVacia()
 {
     return this->frente == nullptr;
 }
 
-
 // Muestra todos los pacientes que están esperando
 void ColaPacientes::mostrarPaciente()
 {
     // Comienza desde el primer nodo
-    Nodo* auxiliar = this->frente;
+    Nodo *auxiliar = this->frente;
 
     // Recorrer la cola hasta llegar al final
     while (auxiliar != nullptr)
@@ -110,13 +105,46 @@ bool ColaPacientes::buscarPaciente(std::string id)
     return false;
 }
 
+bool ColaPacientes::mostrarPacientePorId(std::string id)
+{
+    Nodo *actual = this->frente;
+
+    while (actual != nullptr)
+    {
+        if (actual->paciente.getId() == id)
+        {
+            std::cout << "ID: "
+                      << actual->paciente.getId()
+                      << std::endl;
+
+            std::cout << "Nombre: "
+                      << actual->paciente.getNombre()
+                      << std::endl;
+
+            std::cout << "Edad: "
+                      << actual->paciente.getEdad()
+                      << std::endl;
+
+            std::cout << "Servicio: "
+                      << actual->paciente.getServicio()
+                      << std::endl;
+
+            return true;
+        }
+
+        actual = actual->siguiente;
+    }
+
+    return false;
+}
+
 // Destructor de la cola
 ColaPacientes::~ColaPacientes()
 {
     // Recorrer todos los nodos para liberar su memoria
     while (this->frente != nullptr)
     {
-        Nodo* auxiliar = this->frente;
+        Nodo *auxiliar = this->frente;
 
         this->frente = this->frente->siguiente;
 

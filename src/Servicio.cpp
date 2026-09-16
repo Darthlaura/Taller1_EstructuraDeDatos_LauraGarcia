@@ -40,6 +40,16 @@ void Servicio::mostrarPacientes(){
 
 }
 
+bool Servicio::mostrarPacientePorId(std::string id)
+{
+    return this->pacientes.mostrarPacientePorId(id);
+}
+
+
+bool Servicio::estaVacio()
+{
+    return this->pacientes.estaVacia();
+}
 
 Servicio::~Servicio(){
 

@@ -59,7 +59,8 @@ public:
 
     // Muestra los pacientes que están esperando
     void mostrarPaciente();
-
+    // Mostrar un paciente de la cola buscando por ID
+    bool mostrarPacientePorId(std::string id);
     // Buscar un paciente por su ID
     bool buscarPaciente(std::string id);
     // Destructor de la clase ColaPacientes

@@ -3,14 +3,12 @@
 
 #include "Hospital.h"
 
-
 int main()
 {
     // Crear el hospital
     Hospital hospital;
 
     int opcion = -1;
-
 
     while (opcion != 0)
     {
@@ -24,11 +22,12 @@ int main()
         std::cout << "4. Mostrar pacientes de un servicio" << std::endl;
         std::cout << "5. Mostrar historial de atenciones" << std::endl;
         std::cout << "6. Mostrar servicios del hospital" << std::endl;
+        std::cout << "7. Buscar paciente por ID" << std::endl;
+        std::cout << "8. Mostrar estado general de servicios" << std::endl;
         std::cout << "0. Salir" << std::endl;
 
         std::cout << "\nIngrese una opcion: ";
         std::cin >> opcion;
-
 
         if (opcion == 1)
         {
@@ -44,7 +43,6 @@ int main()
             }
         }
 
-
         else if (opcion == 2)
         {
             std::cout << "\n===== PACIENTES EN ESPERA ====="
@@ -53,14 +51,12 @@ int main()
             hospital.mostrarCola();
         }
 
-
         else if (opcion == 3)
         {
             int cantidad;
 
             std::cout << "\nCantidad de pacientes a atender: ";
             std::cin >> cantidad;
-
 
             if (cantidad <= 0)
             {
@@ -73,7 +69,6 @@ int main()
             }
         }
 
-
         else if (opcion == 4)
         {
             std::string servicio;
@@ -85,10 +80,8 @@ int main()
 
             std::getline(std::cin, servicio);
 
-
             hospital.mostrarPacientesServicio(servicio);
         }
-
 
         else if (opcion == 5)
         {
@@ -98,7 +91,6 @@ int main()
             hospital.mostrarHistorial();
         }
 
-
         else if (opcion == 6)
         {
             std::cout << "\n===== SERVICIOS ====="
@@ -107,6 +99,20 @@ int main()
             hospital.mostrarServicios();
         }
 
+        else if (opcion == 7)
+        {
+            std::string id;
+
+            std::cout << "\nIngrese el ID del paciente: ";
+            std::cin >> id;
+
+            hospital.buscarPacientePorId(id);
+        }
+
+        else if (opcion == 8)
+        {
+            hospital.mostrarEstadoServicios();
+        }
 
         else if (opcion == 0)
         {
@@ -114,14 +120,12 @@ int main()
                       << std::endl;
         }
 
-
         else
         {
             std::cout << "\nOpcion invalida"
                       << std::endl;
         }
     }
-
 
     return 0;
 }
