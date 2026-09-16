@@ -1,6 +1,5 @@
 #ifndef COLAPACIENTES_H
 #define COLAPACIENTES_H
-
 #include "Paciente.h"
 
 
