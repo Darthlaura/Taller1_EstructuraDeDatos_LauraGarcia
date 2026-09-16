@@ -1,3 +1,7 @@
+//Autor: Laura Garcia
+//rut: 26427429-k
+//Carrera: ITI
+//Paralelo: C2
 #include "../include/Hospital.h"
 #include <iostream>
 #include <fstream>

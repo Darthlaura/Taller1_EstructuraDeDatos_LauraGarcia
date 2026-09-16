@@ -1,3 +1,7 @@
+//Autor: Laura Garcia
+//rut: 26427429-k
+//Carrera: ITI
+//Paralelo: C2
 #ifndef PACIENTE_H
 #define PACIENTE_H
 #include "Persona.h"
