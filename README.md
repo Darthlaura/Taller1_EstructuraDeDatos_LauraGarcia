@@ -13,7 +13,7 @@ El objetivo del proyecto es desarrollar un sistema básico de gestión de pacien
 - **RUT:** 26427429-k
 - **GitHub:** Darthlaura
 - **Carrera:** ITI
-- **Paralelo:** C3
+- **Paralelo:** C2
 
 ---
 
